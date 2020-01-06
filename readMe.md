@@ -547,22 +547,65 @@ When you run the files on 01-Day folder you should get this:
 1. Write a single line comment which says, _comments can make code readable_
 ```js
    //comments can make code readable
-   ```
+```
 2. Write another single comment which says, *welcome to 30DaysOfJavaScript*
+```js
+   //welcome to 30DaysOfJavaScript
+```
 3. Write a multiline comment which says, _comments can make code readable, easy to use_
    _and informative_
-
+```js
+   /*
+      comments can make code readable, easy to use
+      and informative 
+   */
+```
 4. Create a variable.js file and declare variables and assign string, boolean, undefined and null data types
+```js
+  const text = 'Mussum Ipsum, cacilds vidis litro abertis.';
+  const bool = true;
+  const undef = undefined;
+  const nulleable = null;
+```
 5. Create datatypes.js file and use the JavaScript ***typeof*** operator to check different data types. Check the data type of each variable
+```js
+console.log(typeof(text)); // string
+console.log(typeof(bool)); // boolean
+console.log(typeof(undef)); // undefined
+console.log(typeof(nulleable)); // null
+```
 6. Declare four variables without assigning values
+```js
+let dog = null;
+let cat = null;
+let bird = null;
+let horse = null;
+```
 7. Declare four variables with assigning values
+```js
+const sound = 'yowl';
+const sleep = false;
+const computer = ['i5 3Gen', 'RAM 8GB ', 'VGA GTX970' ];
+const internet = 1024;
+```
 8. Declare variables to store your first name, last name, marital status, country and age in multiple lines
+```js
+const firstName = 'Diego';
+const lastName = 'Dario';
+const maritalStatus = true;
+let country = 'Brazil';
+let age = 102;
+
+```
 9. Declare variables to store your first name, last name, marital status, country and age in a single line
+```js
+const firstName = 'Diego'; const lastName = 'Dario'; const maritalStatus = true; let country = 'Brazil'; let age = 102;
+```
 10. Declare two variables _myAge_ and _yourAge_ and assign them initial values and log to the browser console.
 
    ```sh
-   I am 25 years old.
-   You are 30 years old.
+   I am 102 years old.
+   You are 112 years old.
    ```
 
 🎉 CONGRATULATIONS ! 🎉
