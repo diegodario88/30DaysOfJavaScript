@@ -545,6 +545,9 @@ When you run the files on 01-Day folder you should get this:
 # 💻 Day 1: Exercises
 
 1. Write a single line comment which says, _comments can make code readable_
+```sh
+   //comments can make code readable
+   ```
 2. Write another single comment which says, *welcome to 30DaysOfJavaScript*
 3. Write a multiline comment which says, _comments can make code readable, easy to use_
    _and informative_
