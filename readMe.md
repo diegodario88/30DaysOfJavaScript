@@ -610,7 +610,7 @@ let age = 102;
 ```
 9. Declare variables to store your first name, last name, marital status, country and age in a single line
 ```js
-const firstName = 'Diego'; const lastName = 'Dario'; const maritalStatus = true; let country = 'Brazil'; let age = 102;
+const firstName = 'Diego', lastName = 'Dario', maritalStatus = true, let country = 'Brazil', let age = 102;
 ```
 10. Declare two variables _myAge_ and _yourAge_ and assign them initial values and log to the browser console.
 

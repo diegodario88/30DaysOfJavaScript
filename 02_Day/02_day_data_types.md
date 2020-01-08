@@ -867,33 +867,126 @@ console.log(numInt) // 9
 # 💻 Day 2: Exercises
 
 1. Declare a variable name challenge and assign it to an initial value **'30 Days Of JavaScript'**.
+```js
+const text = '30 Days Of JavaScript'
+```
 2. Print the string on the browser console using __console.log()__
+```js
+console.log(text);
+```
 3. Print the __length__ of the string on the browser console using _console.log()_
+```js
+console.log(text.length); //31
+```
 4. Change all the string to capital letters using __toUpperCase()__ method
+```js
+const upper = text.toUpperCase();
+```
 5. Change all the string to lowercase letters using __toLowerCase()__ method
+```js
+const lower = text.toLowerCase();
+```
 6. Cut(slice) out the first word of the string using __substr()__ or __substring()__ method
+```js
+const slide = challenge.substr(3,4)
+```
 7. Slice out the phrase *Days Of JavaScript* from *30 Days Of JavaScript*.
+```js
+const cut = challenge.substr(3)
+```
 8. Use __substr__ to slice out the phase __because because because__ in the following sentence:__'You cannot end a sentence with because because because is a conjunction'__
+```js
+const phrase = 'You cannot end a sentence with because because because is a conjunction'
+const start = phrase.indexOf('b'), end = phrase.lastIndexOf('is');
+console.log(phrase.substring(start, end))
+```
 9. Check if the string contains a word __Script__ using __includes()__ method
+```js
+console.log(text.includes('Script')) //true
+```
 10. Split the __string__ into __array__ using __split()__ method
+```js
+console.log(text.split(''));
+```
 11. Split the string 30 Days Of JavaScript at the space using __split()__ method
+```js
+console.log(text.split(' '));
+```
 12. 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' __split__ the string at the comma and change it to an array.
+```js
+const companies = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon';
+const arr = companies.split(', ')
+```
 13. Change 30 Days Of JavaScript to 30 Days Of Python using __replace()__ method.
+```js
+console.log(text.replace('JavaScript', 'Python'))
+```
 14. What is character at index 15 in '30 Days Of JavaScript' string use __charAt()__ method.
+```js
+console.log(text.charAt(15)) //S
+```
 15. What is the character code of J in '30 Days Of JavaScript' string using __charCodeAt()__
+```js
+console.log(text.charCodeAt(11)) //74
+```
 16. Use __indexOf__ to determine the position of the first occurrence of a in 30 Days Of JavaScript
+```js
+console.log(text.indexOf('a')); //4
+```
 17. Use __lastIndexOf__ to determine the position of the last occurrence of a in 30 Days Of JavaScript.
+```js
+console.log(text.lastIndexOf('a')) //14
+```
 18. Use __indexOf__ to find the position of the first occurrence of the word __because__ in the following sentence:__'You cannot end a sentence with because because because is a conjunction'__
+```js
+console.log(phrase.indexOf('because')) //31
+```
 19. Use __lastIndexOf__ to find the position of the last occurrence of the word __because__ in the following sentence:__'You cannot end a sentence with because because because is a conjunction'__
+```js
+console.log(phrase.lastIndexOf('because')) //47
+```
 20. Use __search__ to find the position of the first occurrence of the word __because__ in the following sentence:__'You cannot end a sentence with because because because is a conjunction'__
+```js
+console.log(phrase.search('because')) //31
+```
 21. Use __trim()__ to remove if there is trailing whitespace at the beginning and the end of a string.E.g ' 30 Days Of JavaScript '.
+```js
+const textFormated = text.trim(' ');
+```
 22. Use __startsWith()__ method with the string *30 Days Of JavaScript* make the result true
+```js
+console.log(text.startsWith('30')) //true
+```
 23. Use __endsWith()__ method with the string *30 Days Of JavaScript* make the result true
+```js
+console.log(text.endsWith('Script')) //true
+```
 24. Use __match()__ method to find all the a’s in 30 Days Of JavaScript
+```js
+const pattern = /a/gi
+console.log(text.match(pattern)) //[ 'a', 'a', 'a' ]
+```
 25. Use __match()__ to count the number all because's in the following sentence:__'You cannot end a sentence with because because because is a conjunction'__
+```js
+const pattern = /because/gi
+console.log(phrase.match(pattern).length) //3
+```
 26. Use __concat()__ and merge '30 Days of' and 'JavaScript' to a single string, '30 Days Of JavaScript'
+```js
+const days = '30 Days of', lang = ' JavaScript '
+console.log(days.concat(lang)) //'30 Days Of JavaScript'
+```
 27. Use __repeat()__ method to print 30 Days Of JavaScript 2 times
+```js
+console.log(days.concat(lang).repeat(2)) 
+//30 Days of JavaScript 30 Days of JavaScript
+```
 28. ** 'Love is the best thing in this world. Some found their love and some are still looking for their love.' Count the number of word love in this sentence.
+```js
+const phrase = 'Love is the best thing in this world. Some found their love and some are still looking for their love.';
+const pattern = /love/gi
+console.log(phrase.match(pattern).length) //3
+```
 29. ** Calculate the total annual income of the person by extract the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
 30. ** Clean the following text and find the most frequent word(hint, use replace and regular express).
 
