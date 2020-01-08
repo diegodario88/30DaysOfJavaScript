@@ -988,10 +988,23 @@ const pattern = /love/gi
 console.log(phrase.match(pattern).length) //3
 ```
 29. ** Calculate the total annual income of the person by extract the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+```js
+const anualInc = phrase.match(/\d+/g)
+    .map(item => +item)
+    .reduce((accumulator, current, index) => {
+        if (index === 1) { return accumulator + current }
+        return accumulator + (current * 12)
+    }, 0)
+console.log(anualInc); //250000
+```
 30. ** Clean the following text and find the most frequent word(hint, use replace and regular express).
 
 ```js
     const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is also $the $result of &love& of tea&ching'
+
+    const pattern = /[^a-zA-Z,.?: ]/g
+    const formated = sentence.replace(pattern, '');
+    console.log(formated); //I am a teacher, and I love teaching. There is nothing as more rewarding as educating and empowering people. I found teaching more interesting than any other jobs. Does this motivate you to be a teacher? This DaysOfJavaScript is also the result of love of teaching
 ```
 
 31. Using console.log() print out the following statement.
@@ -999,19 +1012,64 @@ console.log(phrase.match(pattern).length) //3
 ```sh
 The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help to one another.
 ```
+```js
+console.log('The quote \'There is no exercise better for the heart than reaching down and lifting people up.\' by John Holmes teaches us to help to one another.');
 
+```
 32. Using console.log() print out the following quote by Mother Teresa.
 
 ```sh
 "Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead."
 ```
+```js
+console.log("Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead.");
 
+```
 33. Check if 'on' is found in both python and jargon
+```js
+const word1 = 'python'
+const word2 = 'jargon'
+console.log(word1.match(/on/g) && word2.match(/on/g) ? true : false);
+//true
+```
 34. _I hope this course is not full of jargon_. Check if _jargon_ is in the sentence.
+```js
+const sentence = 'I hope this course is not full of jargon'
+console.log(sentence.match(/jargon/g) ? true : false );
+//true
+```
 35. Generate a random number between 0 and 100 inclusive.
+```js
+const rng = (min, max) => {
+        min = Math.ceil(min)
+        max = Math.floor(max)
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+console.log(rng(0, 100)) //a number between 0 and 100
+```
 36. Generate a random number between 50 and 100 inclusive.
+```js
+const rng = (min, max) => {
+        min = Math.ceil(min)
+        max = Math.floor(max)
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+console.log(rng(50, 100)) //a number between 50 and 100
+```
 37. Generate a random number between 0 and 255 inclusive.
+```js
+const rng = (min, max) => {
+        min = Math.ceil(min)
+        max = Math.floor(max)
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+console.log(rng(0, 255)) //a number between 0 and 255
+```
 38. Access the 'JavaScript' string characters using a random number.
+```js
+const word = 'JavaScript'
+console.log(word.charAt(rng(0, word.length))); //random character
+```
 39. Use console.log() and escape characters to print the following pattern.
 
   ```js
@@ -1021,10 +1079,16 @@ The quote 'There is no exercise better for the heart than reaching down and lift
   4 1 4 16 64
   5 1 5 25 125
   ```
-
 40. Check if typeof '10' is exactly equal to 10. If not make it exactly equal.
+```js
+console.log(typeof('10') === 10 ? true : false) //false
+console.log(typeof(+'10') === 10 ? true : false) //true
+```
 41. Check if parseInt('9.8') is equal to 10 if not make it exactly equal with 10.
+```js
+console.log(Math.round(+'9.8')) // 10
 
+```
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 1](https://github.com/Asabeneh/30DaysOfJavaScript/blob/master/readMe.md) | [Day 3 >>](https://github.com/Asabeneh/30DaysOfJavaScript/blob/master/03_Day/03_booleans_operators_date.md)
+[<< Day 1](https://github.com/diegodario88/30DaysOfJavaScript/blob/master/readMe.md) | [Day 3 >>](https://github.com/diegodario88/30DaysOfJavaScript/blob/master/03_Day/03_booleans_operators_date.md)
