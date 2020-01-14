@@ -1,8 +1,5 @@
 <div align="center">
   <h1> 30 Days Of JavaScript</h1>
-  <a class="header-badge" target="_blank" href="https://github.com/Asabeneh/30DaysOfJavaScript">
-  <img alt="GitHub stars" src="https://img.shields.io/github/stars/asabeneh/30DaysOfJavaScript?style=social">
-  </a>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -47,6 +44,9 @@
       - [Sorting elements in array](#sorting-elements-in-array)
     - [Array of arrays](#array-of-arrays)
   - [💻 Exercise](#%f0%9f%92%bb-exercise)
+    - [Exercise: Level 1](#exercise-level-1)
+    - [Exercise: Level 2](#exercise-level-2)
+    - [Exercise: Level 3](#exercise-level-3)
 
 # 📔 Day 5
 
@@ -59,6 +59,7 @@ An array is a collection of different data types which are ordered and changeabl
 ### How to create an empty array
 
 In JavaScript, we can create an array in different ways. Let us different ways to create an array.
+It is very common to use *const* instead of *let* to declare an array variable. If you ar using const it means you do not use that name again.
 
 - Using Array constructor
 
@@ -519,12 +520,20 @@ Slice: To cut out a multiple items in range. It takes two parameters:starting an
 Splice: It takes three parameters:Starting position, number of times to be removed and number of items to be added.
 
 ```js
-  const numbers = [1, 2, 3, 4, 5];
+  const numbers = [1, 2, 3, 4, 5]
 
   console.log(numbers.splice())                // -> remove all items
-  console.log(numbers.splice(0,1))            // remove the first item
-  console.log(numbers.splice(3, 3, 6, 7, 8))  // -> [1,2,6,7,8] //it removes two item and replace three items
 
+```
+
+```js
+  const numbers = [1, 2, 3, 4, 5]
+  console.log(numbers.splice(0,1))            // remove the first item
+```
+
+```js
+  const numbers = [1, 2, 3, 4, 5];
+  console.log(numbers.splice(3, 3, 6, 7, 8))  // -> [1, 2, 3, 6, 7, 8] //it removes two item and replace three items
 ```
 
 #### Adding item to an array using push
@@ -562,7 +571,7 @@ console.log(fruits)   // ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
 
 #### Removing the end element using pop
 
-Pop: Removing item in the end.
+pop: Removing item in the end.
 
 ```js
 const numbers = [1, 2, 3, 4, 5]
@@ -653,6 +662,8 @@ console.log(arrayOfArray[0]) // [1, 2, 3]
 
 ## 💻 Exercise
 
+### Exercise: Level 1
+
 ```js
 const countries = [
   'Albania',
@@ -702,6 +713,9 @@ const webTechs = [
 1. Remove the middle IT company or companies from the array
 1. Remove the last IT company from the array
 1. Remove all IT companies
+
+### Exercise: Level 2
+
 1. Create a separate countries.js file and store the countries array in to this file, create a separate file web_techs.js ans store the webTechs array in to this file. Access both file in main.js file
 1. First remove all the functions and change the string to array and count the number of words in the array
 
@@ -714,6 +728,7 @@ const webTechs = [
 
     ```sh
     ["I", "love", "teaching", "and", "empowering", "people", "I", "teach", "HTML", "CSS", "JS", "React", "Python"]
+  
     13
     ```
 
@@ -742,6 +757,8 @@ const webTechs = [
     ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
     ```
 
+### Exercise: Level 3
+
 1. The following is an array of 10 students ages:
 
     ```js
@@ -749,15 +766,13 @@ const webTechs = [
     ```
 
     - Sort the array and find the min and max age
-    - Find the min age and the max age
     - Find the median age(one middle item or two middle items divided by two)
     - Find the average age(all items divided by number of items)
     - Find the range of the ages(max minus min)
     - Compare the value of (min - average) and (max - average), use *abs()* method
 1.Slice the first ten countries from the [countries array](https://github.com/Asabeneh/30DaysOfJavaScript/tree/master/data/countries.js)
 1. Find the middle country(ies) in the [countries array](https://github.com/Asabeneh/30DaysOfJavaScript/tree/master/data/countries.js)
-1. Find the middle country(ies) in the [countries array](https://github.com/Asabeneh/30DaysOfJavaScript/tree/master/data/countries.js)
-1. Divide the countries array into two equal arrays if it is even.  If countries array is not even , one more country for the first half.
+2. Divide the countries array into two equal arrays if it is even.  If countries array is not even , one more country for the first half.
   
 🎉 CONGRATULATIONS ! 🎉
 
