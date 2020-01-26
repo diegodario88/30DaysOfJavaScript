@@ -14,7 +14,7 @@
 
 </div>
 
-[<< Day 20](https://github.com/Asabeneh/30DaysOfJavaScript/blob/master/20_Day/20_day_writing_clean_code.md) | [Day 22 >>]()
+[<< Day 20](https://github.com/Asabeneh/30DaysOfJavaScript/blob/master/20_Day/20_day_writing_clean_code.md) | [Day 22 >>](https://github.com/Asabeneh/30DaysOfJavaScript/blob/master/22_Day/22_day_dom_day_2.md)
 
 ![Thirty Days Of JavaScript](../images/banners/day_1_21.png)
 
@@ -33,6 +33,8 @@
     - [Adding Text to HTML element](#adding-text-to-html-element)
       - [Adding Text content using textContent](#adding-text-content-using-textcontent)
       - [Adding Text Content using innHTML](#adding-text-content-using-innhtml)
+        - [Text Content](#text-content)
+        - [Inner HTML](#inner-html)
     - [Adding style](#adding-style)
       - [Adding Style Color](#adding-style-color)
       - [Adding Style Background Color](#adding-style-background-color)
@@ -57,7 +59,7 @@ We can access already created element or elements using JavaScript. To access or
 <!DOCTYPE html>
   <html>
     <head>
-      <title>Document Object Model/title>
+      <title>Document Object Model</title>
     </head>
     <body>
 
@@ -131,7 +133,7 @@ The _document.querySelector_ method can select an HTML or HTML elements by tag n
 **_querySelector_**: can be used to select HTML element by its tag name, id or class. If the tag name is used it selects only the first element.
 
 ```js
-let firstTitle = document.querySelect('h1') // select the first available h2 element
+let firstTitle = document.querySelector('h1') // select the first available h2 element
 let firstTitle = document.querySelector('#first-title') // select id with first-title
 let firstTitle = document.querySelector('.title') // select the first available h2 element with class title
 ```
@@ -139,7 +141,7 @@ let firstTitle = document.querySelector('.title') // select the first available 
 **_querySelectorAll_**: can be used to select html element by its tag name or class. It return a nodeList which is an array like object which support array methods. We can use **_for loop_** or **_forEach_** to loop through each nodeList elements.
 
 ```js
-const allTitles = document.querySelectAll('h1')
+const allTitles = document.querySelectorAll('h1')
 
 console.log(allTitles.length) // 4
 for (let i = 0; i < allTitles.length; i++) {
@@ -216,9 +218,76 @@ titles[3].textContent = 'Fourth Title'
 
 Most people get confused between _textContent_ and _innerHTML_. _textContent_ is meant to add text to an HTML element, however innerHTML can add a text or HTML element or elements as a child.
 
+##### Text Content
+
+We assign *textContent* HTML object property to a text
+
 ```js
 const titles = document.querySelectorAll('h1')
 titles[3].textContent = 'Fourth Title'
+```
+
+##### Inner HTML
+
+We use innerHTML property when we like to replace or a completely new children content to a parent element.
+It value we assign is going to be a string of HTML elements.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript for Everyone:DOM</title>
+  </head>
+  <body>
+    <div class="wrapper">
+        <h1>Asabeneh Yetayeh challenges in 2020</h1>
+        <h2>30DaysOfJavaScript Challenge</h2>
+        <ul></ul>
+    </div>
+    <script>
+    const lists = `
+    <li>30DaysOfPython Challenge Done</li>
+            <li>30DaysOfJavaScript Challenge Ongoing</li>
+            <li>30DaysOfReact Challenge Coming</li>
+            <li>30DaysOfFullStack Challenge Coming</li>
+            <li>30DaysOfDataAnalysis Challenge Coming</li>
+            <li>30DaysOfReactNative Challenge Coming</li>
+            <li>30DaysOfMachineLearning Challenge Coming</li>`
+  const ul = document.querySelector('ul')
+  ul.innerHTML = lists
+    </script>
+  </body>
+</html>
+```
+
+The innerHTML property can allow us also to remove all the children of a parent element. Instead of using removeChild() I would recommend the following method.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript for Everyone:DOM</title>
+  </head>
+  <body>
+    <div class="wrapper">
+        <h1>Asabeneh Yetayeh challenges in 2020</h1>
+        <h2>30DaysOfJavaScript Challenge</h2>
+        <ul>
+            <li>30DaysOfPython Challenge Done</li>
+            <li>30DaysOfJavaScript Challenge Ongoing</li>
+            <li>30DaysOfReact Challenge Coming</li>
+            <li>30DaysOfFullStack Challenge Coming</li>
+            <li>30DaysOfDataAnalysis Challenge Coming</li>
+            <li>30DaysOfReactNative Challenge Coming</li>
+            <li>30DaysOfMachineLearning Challenge Coming</li>
+        </ul>
+    </div>
+    <script>
+  const ul = document.querySelector('ul')
+  ul.innerHTML = ''
+    </script>
+  </body>
+</html>
 ```
 
 ### Adding style
@@ -230,7 +299,7 @@ Let us add some style to our titles. If the element has even index we give it gr
 ```js
 const titles = document.querySelectorAll('h1')
 titles.forEach((title, i) => {
-  title.fontSize = '24px' // all titles will have 24px font size
+  title.style.fontSize = '24px' // all titles will have 24px font size
   if (i % 2 === 0) {
     title.style.color = 'green'
   } else {
@@ -246,7 +315,7 @@ Let us add some style to our titles. If the element has even index we give it gr
 ```js
 const titles = document.querySelectorAll('h1')
 titles.forEach((title, i) => {
-  title.fontSize = '24px' // all titles will have 24px font size
+  title.style.fontSize = '24px' // all titles will have 24px font size
   if (i % 2 === 0) {
     title.style.backgroundColor = 'green'
   } else {
@@ -262,7 +331,7 @@ Let us add some style to our titles. If the element has even index we give it 20
 ```js
 const titles = document.querySelectorAll('h1')
 titles.forEach((title, i) => {
-  title.fontSize = '24px' // all titles will have 24px font size
+  title.style.fontSize = '24px' // all titles will have 24px font size
   if (i % 2 === 0) {
     title.style.fontSize = '20px'
   } else {
@@ -331,8 +400,10 @@ As you have notice, the properties of css when we use it in JavaScript is going 
 </html>
 ```
 
-![Project 1](../images/projects/dom_getting_elements_project_1.gif)
+![Project 1](../images/projects/dom_min_project_challenge_info_day_1.1.gif)
+
+![Project 2](../images/projects/dom_min_project_challenge_info_day_1.1.png)
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 20](https://github.com/Asabeneh/30DaysOfJavaScript/blob/master/20_Day/20_day_writing_clean_code.md) | [Day 22 >>]()
+[<< Day 20](https://github.com/Asabeneh/30DaysOfJavaScript/blob/master/20_Day/20_day_writing_clean_code.md) | [Day 22 >>](https://github.com/Asabeneh/30DaysOfJavaScript/blob/master/22_Day/22_day_dom_day_2.md)
